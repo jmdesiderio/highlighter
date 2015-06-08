@@ -1,0 +1,47 @@
+.text-highlighter {
+	position: absolute;
+	overflow: hidden;
+	top: -1000px;
+	left: -1000px;
+	z-index: 3;
+	height: 5.5rem;
+	opacity: 0;
+	transform: translate3d(0, -10px, 0);
+	transition: opacity @default-transition,
+				transform @default-transition;
+
+	&.visible {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
+.tweet-link {
+	padding: 0.75rem 1rem;
+	display: block;
+	color: @white;
+}
+
+.arrow-box {
+	position: relative;
+	background: @black;
+}
+
+.arrow-box:after, .arrow-box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow-box:after {
+	border-color: @transparent;
+	border-top-color: @black;
+	border-width: 1rem;
+	margin-left: -1rem;
+}
